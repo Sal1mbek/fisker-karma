@@ -10,83 +10,54 @@
                 alert('You have found a hidden hint on our website, so we offer you a 1% discount on any purchase!');
         }
         // Display a simple alert message
-    alert("Welcome to Fisker Karma!");
+        alert("Welcome to Fisker Karma!");
 
-// Capture and handle user events
-document.addEventListener('DOMContentLoaded', function() {
-    // Example: Show a message when a button is clicked
-    document.getElementById('learn_more').addEventListener('click', function() {
-        alert('You clicked the "Learn More" button!');
-    });
+    // Capture and handle user events
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example: Show a message when a button is clicked
+            document.getElementById('learn_more').addEventListener('click', function() {
+                alert('You clicked the "Learn More" button!');
+            });
 
-    // Example: Show a prompt and display the user's input
-    document.getElementById('contact_button').addEventListener('click', function() {
-        var userInput = prompt('Please enter your name:');
-        if (userInput !== null) {
-            alert('Hello, ' + userInput + '!');
-        }
-    });
-});
+            // Example: Show a prompt and display the user's input
+            document.getElementById('contact_button').addEventListener('click', function() {
+                var userInput = prompt('Please enter your name:');
+                if (userInput !== null) {
+                    alert('Hello, ' + userInput + '!');
+                }
+            });
+        });
+        window.addEventListener('beforeunload', function(event) {
+            var confirmationMessage = 'Вы уверены, что хотите покинуть эту страницу?';
 
+            if (!confirm(confirmationMessage)) {
+                (event || window.event).returnValue = confirmationMessage;
+                return confirmationMessage;
+            }
+        });
 // Implement if-else statements
-var condition = true;
-if (condition) {
-    alert('The condition is true.');
-} else {
-    alert('The condition is false.');
-}
-
-// Use a loop to perform a specific action on each element of an array
-var colors = ['red', 'green', 'blue'];
-for (var i = 0; i < colors.length; i++) {
-    console.log(colors[i]);
-}
-
-// Basic form validation script using JavaScript
-function validateForm() {
-    var name = document.getElementById('name').value;
-    if (name == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    return true;
-}
-
-// Basic image slider with forward and backward navigation buttons
-var currentImageIndex = 0;
-var images = [
-    "image1.jpg",
-    "image2.jpg",
-    "image3.jpg"
-];
-
-function showImage(index) {
-    var imgElement = document.getElementById('slider_image');
-    imgElement.src = images[index];
-    currentImageIndex = index;
-}
-
-function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    showImage(currentImageIndex);
-}
-
-function prevImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    showImage(currentImageIndex);
-}
-
-// Timer or countdown functionality
-var count = 20;
-var timer = setInterval(function() {
-    count--;
-    if (count <= 0) {
-        clearInterval(timer);
-        alert("Extend session");
-    } else {
-        console.log(count);
-    }
-}, 1000);
+        var condition = true;
+        if (condition) {
+            alert('The condition is true.');
+        } else {
+            alert('The condition is false.');
+        } 
+        function showImage(index) {
+            var imgElement = document.getElementById('slider_image');
+            imgElement.src = images[index];
+            currentImageIndex = index;
+        }
+        // Timer or countdown functionality
+        var count = 20;
+        var timer = setInterval(function() {
+            count--;
+            if (count <= 0) {
+                clearInterval(timer);
+                alert("Extend session");
+            } else {
+                console.log(count);
+            }
+        }, 1000);
     </script>        
 </head>
 <body>
